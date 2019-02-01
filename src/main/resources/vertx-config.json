@@ -1,0 +1,9 @@
+{
+    "HTTP_SERVER_PORT": 8080,
+    "HTTP_SERVER_INSTANCES": 1,
+    
+    "DB_JDBC": "jdbc:postgresql://localhost:5432/sample",
+    "DB_USER": "postgres",
+    "DB_PASS": "postgres",
+    "DB_MAX_POOL_SIZE": 30
+}

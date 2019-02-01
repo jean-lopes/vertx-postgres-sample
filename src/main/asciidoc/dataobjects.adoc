@@ -1,0 +1,35 @@
+= Cheatsheets
+
+[[LastSearch]]
+== LastSearch
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[value]]`@value`|`Instant`|-
+|===
+
+[[LastTransaction]]
+== LastTransaction
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[value]]`@value`|`Instant`|-
+|===
+
+[[PageRequest]]
+== PageRequest
+
+
+[cols=">25%,25%,50%"]
+[frame="topbot"]
+|===
+^|Name | Type ^| Description
+|[[valid]]`@valid`|`Boolean`|-
+|===
+
