@@ -1,0 +1,138 @@
+openapi: 3.0.0
+# Added by API Auto Mocking Plugin
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/n286/vertx-postgres-sample/1.0.0
+info:
+  description: |
+    Vert.x sample
+  version: "1.0.0"
+  title: vertx-sample
+tags:
+  - name: vertx-sample
+paths:
+  /last_search:
+    post:
+      summary: Check the last time this CPF has been searched.
+      parameters:
+      - name: cpf
+        in: path
+        description: CPF with hyphens
+        required: true
+        schema:
+          $ref: '#/components/schemas/cpf'
+      responses:
+        '200':
+          description: Last time this CPF has been searched.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: string
+                    format: date-time
+        '204':
+          description: CPF has never been searched.
+        '400':
+          description: Invalid CPF
+  /last_transaction:
+    post:
+      summary: Check the last transaction for this CPF with specific transaction kind.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cpf:
+                  $ref: '#/components/schemas/cpf'
+                name:
+                  $ref: '#/components/schemas/kind'
+      responses:
+        '200':
+          description: Last transaction
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: string
+                    format: date-time
+        '204':
+          description: No transaction
+        '400':
+          description: Invalid CPF
+  /transactions:
+    post:
+      summary: Transactions for this CPF.
+      requestBody:
+        description: CPF and Page information
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cpf:
+                  $ref: '#/components/schemas/cpf'
+                page:
+                  $ref: '#/components/schemas/page'
+      responses:
+        '200':
+          description: Transactions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/transaction'
+        '204':
+          description: No transaction
+        '400':
+          description: Invalid CPF or Page
+components:
+  schemas:
+    cpf:
+      type: string
+      pattern: '^\d{3}-\d{2}-\d{4}$'
+    kind:
+      type: string
+      enum:
+      - CA
+      - CR
+      - DE
+    transaction:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        cpf:
+          $ref: '#/components/schemas/cpf'
+        kind:
+          $ref: '#/components/schemas/kind'
+        processedOn:
+          type: string
+          format: date-time
+    page:
+      type: object
+      properties:
+        size:
+          type: integer
+          format: int32
+          minimum: 0
+        offset:
+          type: integer
+          format: int32
+          minimum: 0
