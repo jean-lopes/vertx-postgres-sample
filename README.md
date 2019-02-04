@@ -9,7 +9,7 @@ $ docker-compose up
 ```
 
 ## Solution
-!(Alt solution)[solution.png]
+![Alt solution](solution.png)
 
 ## Technologies
 - Java
