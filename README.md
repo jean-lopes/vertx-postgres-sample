@@ -13,7 +13,7 @@ You need to have installed docker and docker-compose.
 - PostgreSQL
 
 ## API
-The OpenAPI yaml can be found here: [api](api.yaml)
+The OpenAPI documentation can be found here: [api](https://app.swaggerhub.com/apis-docs/n286/vertx-postgres-sample/1.0.0)
 
 
 ## Other info
