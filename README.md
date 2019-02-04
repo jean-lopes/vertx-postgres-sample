@@ -9,7 +9,7 @@ $ docker-compose up
 ```
 
 ## Solution
-![solution.svg](https://raw.githubusercontent.com/jean-lopes/vertx-postgres-sample/master/solution.sv://raw.githubusercontent.com/jean-lopes/vertx-postgres-sample/master/solution.svg?sanitize=true)
+!(Alt solution)[solution.png]
 
 ## Technologies
 - Java
