@@ -180,7 +180,7 @@ public class HttpVerticle extends AbstractVerticle {
         
         PageRequest page = new PageRequest(pageJson);
         
-        if (page.isValid()) {
+        if (!page.isValid()) {
             failure(ctx, 400, "Invalid page object");
         } else {
             cpfHandler(ctx, cpf -> database.rxTransactions(cpf, page)
