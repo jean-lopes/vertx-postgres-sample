@@ -35,6 +35,6 @@ public class PageRequest {
     }
     
     public boolean isValid() {
-        return Objects.isNull(size) || Objects.isNull(offset) || size < 0 || offset < 0;
+        return !(Objects.isNull(size) || Objects.isNull(offset) || size < 0 || offset < 0);
     }
 }
