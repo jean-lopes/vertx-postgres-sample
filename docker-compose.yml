@@ -11,9 +11,7 @@ services:
       - POSTGRES_USER=$DB_USER
       - POSTGRES_PASSWORD=$DB_PASS
     restart: always
-    #   networks:
-    #  - backend
-  vertex-sample:
+  vertx-sample:
     image: jeanlopes/vertx-sample:SNAPSHOT
     links:
       - pg
@@ -27,8 +25,3 @@ services:
       - DB_PASS
       - DB_MAX_POOL_SIZE
     restart: always
-    # networks:
-    #   - backend
-    # networks:
-    #   backend:
-    #     driver: "bridge"
