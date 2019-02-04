@@ -12,6 +12,10 @@ You need to have installed docker and docker-compose.
 - Java
 - PostgreSQL
 
+## API
+The OpenAPI yaml can be found here: [api](api.yaml)
+
+
 ## Other info
 I would change the following:
 - Database B needs to have CPF.
